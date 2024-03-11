@@ -1,0 +1,17 @@
+import requests
+ 
+def function_b(request):
+    # URL of the Cloud Function to call
+    function_a_url = "https://us-central1-mcitdemoproject2024.cloudfunctions.net/functions"
+ 
+    # JSON payload to send to function_a
+    payload = {"data": "If this shows it means you were able to call Function a"}
+ 
+    # Making a POST request to function_a
+    response = requests.post(function_a_url, json=payload)
+ 
+    # Check if the request was successful
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return f"Error: {response.status_code}"
