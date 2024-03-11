@@ -1,0 +1,12 @@
+def function_a(request):
+    # Assuming the request contains JSON data
+    request_json = request.get_json()
+ 
+    # Extracting data from the request
+    data = request_json.get("data")
+ 
+    # Performing some processing or business logic
+    processed_data = data.upper()  # Example processing, converting to uppercase
+ 
+    # Returning the processed data
+    return {"processed_data": processed_data}
